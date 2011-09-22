@@ -1,0 +1,42 @@
+﻿+ chxl=1:|you|don't|fool|me|no%23
+chxr=0,0,160
+chxt=x,y
+chbh=a
++ chs=750x400
++ cht=bhs
++ chco=0000FF
+chds=0,160
++ chd=t:10,20,30,40,50
++ chtt=chart+title
+
+
+
++ chs=750x400
++ cht=p
++ chd=t:10,20,30,40,50
++ chl=you|don't|fool|me|no%23
++ chtt=chart+title
++ chco=0000FF
+   
+   
+same:
++ chs=750x400
++ chd=t:10,20,30,40,50
++ chco=0000FF
++ chtt=chart+title
++ chds=0,160
+
+same data, diff param:
++ (chxl=1:|/chl=)you|don't|fool|me|no%23
+
+same param, diff data:
++ cht=(bhs/p)
+
+bar:
++ chxr=0,0,160
++ chxt=x,y
++ chbh=a
+
+
+pie:
+---

@@ -1,0 +1,5 @@
+{% extends "error.html" %}
+
+{% block error_message %}
+The thread <a href="http://news.ycombinator.com/item?id={{thread_id}}">#{{thread_id}}</a> contained no poll, or due to some internal error a non-HN page was fetched and processed.<br />
+{% endblock error_message %}

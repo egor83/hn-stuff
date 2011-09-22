@@ -1,0 +1,38 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Build poll results chart{% endblock %}
+
+{% block content %}
+  Enter poll thread id:<br />
+  <form action="/poll_chart/build/" method="get">
+    <table>
+      <tr>
+        <td>
+          <input type="text" name="thread_id" />
+        </td>
+      <tr>
+      <tr/>
+      <tr>
+        <td>
+          Chart type:<br />
+          <input type="radio" name="chart_type" value="bar" id="bar" checked/><label for="bar">Bar</label><br />
+          <input type="radio" name="chart_type" value="pie" id="pie"/><label for="pie">Pie</label><br />
+        </td>
+      </tr>
+      <tr>
+      <tr/>
+      <tr>
+        <td>
+        <input type="checkbox" name="show_percents" id="percents"><label for="percents">Show percentages</label><br />
+        </td>
+      <tr/>
+      <tr>
+        <td>
+          <input type="submit" value="Build chart">
+        </td>
+      </tr>
+    </table>
+  </form>
+  <br />
+  Want to know more? See <a href="/poll_chart/intro/">description</a>.
+{% endblock content %}

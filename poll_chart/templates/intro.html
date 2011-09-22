@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Chart builder for HN polls: introduction{% endblock %}
+
+{% block content %}
+  <h1>Visualizing HN poll results</h1><br />
+  This <a href="/poll_chart">tool</a> lets you visualize <a href="http://www.hnsearch.com/search#request/submissions&q=poll&start=0">HN polls'</a> results by building charts; take <a href="http://news.ycombinator.com/item?id=2846799">this poll</a> for example:<br />
+  <br />
+  <a href="/poll_chart"><img src="http://chart.apis.google.com/chart?chco=0000FF&chs=750x400&chtt=Have+you+read+SICP%3F+%282477+votes%29&chd=t:344,170,570,206,182,324,681&chds=0,681&cht=bhs&chxt=x,y&chbh=a&chxl=1:|Not+yet%2C+but+it+should+happen+soon%20(27.5%)|All+of+it%20(13.1%)|About+75%25+of+it%20(7.3%)|About+50%25+of+it%20(8.3%)|About+25%25+of+it%20(23.0%)|No%2C+but+it%27s+on+my+shelf+for+street+cred%20(6.9%)|No%2C+and+I+don%27t+want+to%20(13.9%)&chxr=0,0,681" /></a><br />
+  <br />
+  <br />
+  A few more examples:<br />
+  <br />
+  Have you read SICP? (<a href="http://news.ycombinator.com/item?id=2846799">thread</a>): <a href="/poll_chart/build/?thread_id=2846799&chart_type=bar&show_percents=on">bar chart</a> with percents per option (as seen above), <a href="/poll_chart/build/?thread_id=2846799&chart_type=pie">pie chart</a>;<br />
+  <br />
+  What database does your company use? (<a href="http://news.ycombinator.com/item?id=2684620">thread</a>): <a href="/poll_chart/build/?thread_id=2684620&chart_type=bar&show_percents=on">bar chart</a> with percents, <a href="/poll_chart/build/?thread_id=2684620&chart_type=pie">pie chart</a>;<br />
+  <br />
+  Where are you from? (<a href="http://news.ycombinator.com/item?id=527681">thread</a>): <a href="/poll_chart/build/?thread_id=527681">bar chart</a>, <a href="/poll_chart/build/?thread_id=527681&chart_type=pie&show_percents=on">pie chart</a> with percents;<br />
+  <br />
+  Which smartphone platform do you own and use mainly? (<a href="http://news.ycombinator.com/item?id=2855717">thread</a>): <a href="/poll_chart/build/?thread_id=2855717">bar chart</a>, <a href="/poll_chart/build/?thread_id=2855717&chart_type=pie">pie chart</a>.<br />
+  <br />
+  <a href="/poll_chart">Try it</a> yourself!<br />
+  <br />
+  <br />
+  <br />
+  Source code can be found at <a href="https://www.assembla.com/code/hn-stuff/subversion/nodes">Assembla</a>. Feedback, comments on the code, ideas for improvement are all welcome!<br />
+  <br />
+  Shameless plug: if you have some Python/GAE work to be done (also Django, but I'm really new to it), maybe we could talk about it - egor.ryabkov(at)gmail.com.<br />
+{% endblock content %}

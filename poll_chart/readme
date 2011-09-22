@@ -1,0 +1,45 @@
+Questions:
+
+Q: - what would be the good (unit)tests for this program?
+Q: - is there a way to use str.format in Py 2.5 (smth like import from future?)
+
+TODO:
+
+
+LATER/?:
+
+- for fetching error add 'repeat' link to error page;
+- track voting progress over time;
+- store something for non-poll pages as well to prevent further fetches;
+________________________________________________________________________________
+
+DONE:
+
+- store stripped title;
+- count percentages;
+- make a proper results page (simple template);
+- see todos in the code
+- on DownloadError fetch cached (if outdated) page;
+IRR - fix long line problems: replace one of the spaces w/ newline (see 2595605, 2910571); - find the space closest to position 25 (from the left) and replace it with newline; (no multiline for pie)
+- introduction page: examples, link to HNsearch: [poll]; plug; link to source + request for comments; link to other pages (?);
+- log a warning on not a poll/other problems, don't fail silently;
+- put parsing-related stuff to a separate file;
+- handle addresses both w/ and w/o final slash;
+- add statcounter;
+- make base template;
+- show total # of answers;
+- improve error handling: display error cause to the user (custom exceptions?);
+- only display the first 40 characters of each option description to make bar charts look better when there are long descriptions;
+
+________________________________________________________________________________
+
+Questions (answered):
+
+Q: - how do I catch the end of the poll?
+A: - sibling will be None
+
+Q: - how do I separate post w/a poll from the one without? Is there a reliable way to tell one from another?
+A1: - votes have 'point(s)' with them, comments (atm) do not;
+A2: - maybe there'd be something in HN serverside code;
+________________________________________________________________________________
+
