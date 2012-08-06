@@ -3,9 +3,26 @@
     <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
     <title>{% block title %}Default page title{% endblock %}</title>
     <meta charset="utf-8" />
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33877189-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <!-- end Google Analytics -->
   </head>
   <body>
     {% block content %}Content stub{% endblock %}
+    <br />
+    If you have some Python/Django/GAE work to be done, drop me a line - egor.ryabkov(at)gmail.com<br />
   </body>
 </html>
 

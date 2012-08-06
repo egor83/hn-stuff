@@ -1,7 +1,7 @@
 import re
 
 def parse_data(soup):
-    """Parses the page, returns a list of voting options and a list of votes"""
+    """Parse the page, return a list of voting options and a list of votes."""
 
     # How should I store data? List of tuples looks more logical, but I'll have
     # to split it in two lists later anyway, when preparing the data for the
@@ -41,7 +41,7 @@ def get_next_voting_option(tag):
     return tag.nextSibling.nextSibling.nextSibling
 
 def get_votes(tag):
-    """Return the tuple: a text of a voting option and the number of votes
+    """Return the tuple: a text of a voting option and the number of votes.
 
     Input is the <tr> tag containing the option text; next <tr> contains the
     number of votes, and the following one is the delimiter from the next
