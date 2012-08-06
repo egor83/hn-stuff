@@ -5,7 +5,7 @@ import os
 import logging
 from poll_chart import make_chart
 
-class ChartMain(webapp.RequestHandler):
+class ChartHomepage(webapp.RequestHandler):
     def get(self):
         path = os.path.join(os.path.dirname(__file__), 'templates/poll_chart.html')
         self.response.out.write(template.render(path, {}))
@@ -81,8 +81,8 @@ class IntroPage(webapp.RequestHandler):
 
 def main():
     logging.getLogger().setLevel(logging.DEBUG)
-    application = webapp.WSGIApplication([('/poll_chart', ChartMain),
-                                            ('/poll_chart/', ChartMain),
+    application = webapp.WSGIApplication([('/poll_chart', ChartHomepage),
+                                            ('/poll_chart/', ChartHomepage),
                                             ('/poll_chart/build', MakeChart),
                                             ('/poll_chart/build/', MakeChart),
                                             ('/poll_chart/error', ErrorPage),

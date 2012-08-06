@@ -1,6 +1,8 @@
 import BeautifulSoup
 import logging
 import datetime
+import traceback
+
 from urllib import quote_plus
 
 from google.appengine.ext import db
@@ -23,6 +25,8 @@ def create_chart(thread_id, chart_type, show_percents):
     return chart_url
 
 def build_chart_url(poll_data, chart_type, show_percents):
+    """(?)Construct chart URL from (parsed?) poll data."""
+
     # from http://code.google.com/intl/en/apis/chart/image/docs/chart_wizard.html
     chart_url_base = "http://chart.apis.google.com/chart"
 
@@ -109,9 +113,15 @@ cached data', de)
 
         try:
             title, options, votes = poll_chart.parsing.parse_data(soup)
-        except AttributeError: # not a poll
-            logging.error('Thread %s has no poll', thread_id)
-            raise NoPollError(thread_id)
+        except AttributeError, ae: # not a poll or access to the old page was denied
+            logging.error('Thread %s page has no poll', thread_id)
+#            logging.warning(page.read())
+#            logging.error(traceback.format_exc())
+            if poll_data:
+                logging.warning('Access (probably) denied, using cached version.')
+                return poll_data
+            else:
+                raise NoPollError(thread_id)
         except IndexError: # not a HN page
             logging.error(
                 'IndexError @ thread %s - maybe trying to parse a non-HN page?',
@@ -145,6 +155,7 @@ cached data', de)
         logging.debug('Obtained data for thread %s from cache' % thread_id)
 
     return poll_data
+
 
 class PollData(db.Model):
     thread_id = db.StringProperty()

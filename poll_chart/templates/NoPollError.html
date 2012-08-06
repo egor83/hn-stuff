@@ -1,5 +1,7 @@
 {% extends "error.html" %}
 
 {% block error_message %}
-The thread <a href="http://news.ycombinator.com/item?id={{thread_id}}">#{{thread_id}}</a> contained no poll.<br />
+No poll found in page fetched for thread <a href="http://news.ycombinator.com/item?id={{thread_id}}">#{{thread_id}}</a>.
+
+Either the thread contains no poll or something went wrong.<br />
 {% endblock error_message %}
