@@ -32,7 +32,7 @@ def build_chart_url(poll_data, chart_type, show_percents):
 
     # set the common chart arguments (shared by both types)
     chart_arguments = [
-        "chco=0000FF", # color
+        "chco=0000FF,008080,00FF00,808000,FF0000", # color
         "chs=750x400", # size
         "".join(["chtt=", quote_plus(poll_data.title)]), # title
         ]

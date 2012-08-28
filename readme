@@ -1,15 +1,17 @@
-HN stuff - first version.
-
-Can be found at:
-
-Assembla (main repo):
-https://www.assembla.com/code/hn-stuff/subversion/nodes
-
-GitHub:
-https://github.com/egor83/hn-stuff
+HN stuff.
 
 Deployed at:
 http://hn-stuff.appspot.com/
 
+Source code can be found at:
+
+GitHub:
+https://github.com/egor83/hn-stuff
+
+Assembla:
+https://www.assembla.com/code/hn-stuff/subversion/nodes
+
+
 TODO
-accept full addresses as well
+- accept full addresses as well
+- change Assembla to GitHub, change job ad;

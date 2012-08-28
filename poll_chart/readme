@@ -3,10 +3,11 @@ TODO:
 - Start using HNsearch API:
     "We've limited requests for old items.  If you're running a crawler, you can get this data a lot more easily from http://hnsearch.com/api."
 - email errors: http://stackoverflow.com/questions/2118524/gae-email-me-errors
+- unit tests;
+
 
 Questions:
 
-Q: - what would be the good (unit)tests for this program?
 Q: - is there a way to use str.format in Py 2.5 (smth like import from future?)
 
 
